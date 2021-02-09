@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Github Info Finder</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row hover-btn">
+            <div class="col-md-6 mx-auto text-center">
+                <div class="search-area">
+                    <input id="search-bar" class="search-bar form-control" type="text" placeholder="Search github Username here">
+                    <button id="search-btn" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+                <div class="error bg-danger text-white">
+                </div>
+            </div>
+        </div>
+        <div class="w-100 my-5">
+            <div class="row d-flex align-items-center justify-content-baseline">
+                <div class="col-md-6">
+                    <div class="profile-photo mx-auto">
+                        <img id="profile-pic" src="images/welcome.jpg" alt="git username">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="github-names mx-auto">
+                        <h1 id="gh-name">GIthub Name</h1>
+                        <p>
+                            <i class="fab fa-github" aria-hidden="true"></i><a href="#"  id="git-uname">@UserName</a>
+                        </p>
+                        <p> <i class="fab fa-twitter" aria-hidden="true"></i><a href="#" id="twitter-uname">@UserName</a>
+                        </p>
+                        <div class="bio">
+                            <p id="profile-bio">lorem ipsum some some bio</p>
+                        </div>
+                    </div>
+                    <div class="github-follow">
+                        <table class="">
+                            <tr>
+                                <td>followers : <span id="followers">0</span></td>
+                                <td>following : <span id="following">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Public Repo : <span id="public-repo">0</span></td>
+                                <td>Public Gists : <span id="public-gists">0</span></td>
+                                <td>stars : <span id="stars">0</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <table id="table" class="repo-table table">
+                    <tr>
+                        <th>#</th>
+                        <th>Repository Name</th>
+                        <th>watchs</th>
+                        <th>forks</th>
+                        <th>stars</th>
+                        <th>Last Update</th>
+                        <th>Branch</th>
+                        <th>Page</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-10 mx-auto">
+                <div class="account-info">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Account Created: <span id="created">Many Years Ago :p</span></p>
+                        </div>
+                        <div class="col-md-6 text-md-right">
+                            <p>Last Updated: <span id="last-update">its also many years ago</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="text-center bg-dark text-white pt-3 pb-4">
+        <p>Made By <a class="text-warning" href="https://github.com/Shariar-Hasan/">Shariar Hasan</a></p>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
