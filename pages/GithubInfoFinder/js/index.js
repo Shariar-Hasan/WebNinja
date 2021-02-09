@@ -50,7 +50,7 @@ function searchUser(){
 
 function showUserProfile(data){
     if(data.message == 'Not Found'){
-        showError('Username not found');
+        showError('Username not found! Check the name carefully');
         return;
     }
     
@@ -58,7 +58,7 @@ function showUserProfile(data){
     document.getElementById('profile-pic').src = data.avatar_url;
     document.getElementById('profile-pic').alt = data.login;
 
-    document.getElementById('gh-name').innerText = data.name;
+    document.getElementById('gh-name').innerText = data.name || data.login;
     document.getElementById('git-uname').innerText = data.login;
     document.getElementById('git-uname').href = data.html_url;
     document.getElementById('twitter-uname').innerText = data.twitter_username || 'Not Connected';
@@ -86,6 +86,17 @@ function showUserProfile(data){
         if(data){
             console.log(data);
             let i = 1;
+            document.getElementById('table').innerHTML = 
+            `<tr>
+                <th>#</th>
+                <th>Repository Name</th>
+                <th>watchs</th>
+                <th>forks</th>
+                <th>stars</th>
+                <th>Last Update</th>
+                <th>Branch</th>
+                <th>Page</th>
+            </tr>`;
             data.forEach(repo => {
                 // all repo create
                 document.getElementById('table').innerHTML += 
