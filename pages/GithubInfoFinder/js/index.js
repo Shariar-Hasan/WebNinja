@@ -97,7 +97,7 @@ function showUserProfile(data){
                     <td>${repo.stargazers_count}</td>
                     <td>${repo.updated_at}</td>
                     <td>${repo.default_branch}</td>
-                    <td>${(repo.has_pages)? '<a href="'+repo.homepage+'"> Live Link </a>' : 'No Page' }</td>
+                    <td>${(repo.homepage !== null) ? '<a href="'+repo.homepage+'"> Live Link </a>' : 'No Page' }</td>
                 </tr>`
             });
         }        
