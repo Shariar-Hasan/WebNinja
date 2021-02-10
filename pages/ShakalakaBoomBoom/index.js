@@ -46,15 +46,32 @@ function getLyrics(title,artist){
     console.log(title,artist);
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(res => res.json())
-    .then(data => showLyrics(data))
+    .then(data =>{
+        showLyrics(data,title);
+    })
     .catch(err => getLyricsShow.innerText = err)
 }
 
 
-function showLyrics(data){
-    document.getElementById('lyrics-show').innerText = `${data.lyrics}`;
-    window.scrollTo({
-        top : 200,
-        behavior : "smooth"
-    })
+function showLyrics(data,title){
+    console.log(data);
+    document.getElementById('single-lyrics').style.display = 'block';
+    document.getElementById('lyrics-show').innerText= `${data.lyrics || "No Lyrics Available"}`;
+    document.getElementById('lyrics-song-name').innerText= `${title}`;
+    setTimeout(() => {
+        document.getElementById('single-lyrics').style.height = 'auto';
+        document.getElementById('single-lyrics').style.opacity = '1';
+    }, 250);
 }
+
+
+
+function closeLyrics(){
+    
+        document.getElementById('single-lyrics').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('single-lyrics').style.height = '0';
+        document.getElementById('single-lyrics').style.display = 'none';
+    }, 250);
+}
+

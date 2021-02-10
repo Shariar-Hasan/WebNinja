@@ -10,6 +10,9 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <!-- Custom css -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,7 +23,8 @@
             <a class="navbar-brand" href="#">
                 <img src="images/logo.png" alt="Hard Rock Solution">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <img src="images/toggler-icon.svg" alt="">
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -32,7 +36,8 @@
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
                             <a class="dropdown-item" href="#">Action 1</a>
                             <a class="dropdown-item" href="#">Action 2</a>
@@ -44,18 +49,26 @@
 
         <main class="content-area">
             <div class="search-bar col-md-6 mx-auto">
-                <h1 class="text-center">ShakaLaka Lyric Search</h1>
+                <h1 class="text-center">Hard Rock Lyric Search</h1>
                 <div class="search-box my-5">
                     <input id="search-bar" type="text" class="form-control" placeholder="Enter your artist song name">
                     <button id="search-btn" class="btn btn-success search-btn">Search</button>
                 </div>
             </div>
             <!-- Single Lyrics -->
-            <div id="lyrics-show" class="single-lyrics text-center">
-                
+            <div id="single-lyrics" class="single-lyrics">
+                <div class="lyrics-top pl-2">
+                    <h3 id="lyrics-song-name" class="text-left"></h3>
+                    <i onclick="closeLyrics()" class="cross-icon fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div id="lyrics-show" class=" text-center">
+                </div>
+                <div class="lyrics-bottom">
+                    <button onclick="closeLyrics()" class="btn btn-block btn-dark">Close</button>
+                </div>
             </div>
             <div id="search-result" class="search-result col-md-8 mx-auto py-4">
-               
+
             </div>
         </main>
     </div>

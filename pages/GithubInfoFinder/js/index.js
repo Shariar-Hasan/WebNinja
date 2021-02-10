@@ -19,15 +19,14 @@ function showError(msg){
         }, 2700);
     }, 500);
 }
-// small animation after finding a valid user
-function animateWindow(){
-    setTimeout(() => {
-        document.body.style.opacity = '0';
-    }, 250);
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 250);
-}
+// // small animation after finding a valid user
+// function animateWindow(){
+//     // document.body.style.display = 'none';
+//     // setTimeout(() => {
+//     //     document.body.style.display = 'block';
+//     // }, 250);
+
+// }
 
 // event handler with search
 getBtn.addEventListener('click',searchUser);
@@ -61,16 +60,22 @@ function showUserProfile(data){
         showError('Username not found! Check the name carefully');
         return;
     }
-    animateWindow();
+
     // profile part
     document.getElementById('profile-pic').src = data.avatar_url;
     document.getElementById('profile-pic').alt = data.login;
 
     document.getElementById('gh-name').innerText = data.name || data.login;
     document.getElementById('git-uname').innerText = data.login;
-    document.getElementById('git-uname').href = data.html_url;
+    if(data.html_url !== null){
+        document.getElementById('git-uname').setAttribute('href',data.html_url)
+    }
+    // document.getElementById('git-uname').href = data.html_url;
     document.getElementById('twitter-uname').innerText = data.twitter_username || 'Not Connected';
-    document.getElementById('twitter-uname').href = 'https://twitter.com/'+data.twitter_username || '#';
+    if(data.twitter_username !== null){
+        document.getElementById('twitter-uname').setAttribute('href',`https://twitter.com/${data.twitter_username}`)
+    }
+   // document.getElementById('twitter-uname').href = (data.twitter_username !== null)? 'https://twitter.com/'+data.twitter_username : '#';
     document.getElementById('profile-bio').innerText = data.bio || 'No Bio Available';
     document.getElementById('followers').innerText = data.followers;
     document.getElementById('following').innerText = data.following;
@@ -116,7 +121,7 @@ function showUserProfile(data){
                     <td>${repo.stargazers_count}</td>
                     <td>${repo.updated_at}</td>
                     <td>${repo.default_branch}</td>
-                    <td>${(repo.homepage !== null && repo.homepage !== '') ? '<a href="'+repo.homepage+'" target="_blank"> Live Link </a>' : 'No Page' }</td>
+                    <td>${(repo.homepage !== null && repo.homepage !== '') ? '<a href="'+repo.homepage+'" target="_blank"> Live Link </a>' : 'Unavailable' }</td>
                 </tr>`
             });
         }        
