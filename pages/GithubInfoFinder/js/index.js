@@ -4,7 +4,7 @@ const getError = document.querySelector('.error');
 
 
 
-
+// error show handling
 function showError(msg){
     getError.innerHTML = msg;
     getError.style.display = 'block';
@@ -19,7 +19,15 @@ function showError(msg){
         }, 2700);
     }, 500);
 }
-
+// small animation after finding a valid user
+function animateWindow(){
+    setTimeout(() => {
+        document.body.style.opacity = '0';
+    }, 250);
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 250);
+}
 
 // event handler with search
 getBtn.addEventListener('click',searchUser);
@@ -53,7 +61,7 @@ function showUserProfile(data){
         showError('Username not found! Check the name carefully');
         return;
     }
-    
+    animateWindow();
     // profile part
     document.getElementById('profile-pic').src = data.avatar_url;
     document.getElementById('profile-pic').alt = data.login;
@@ -102,13 +110,13 @@ function showUserProfile(data){
                 document.getElementById('table').innerHTML += 
                 `<tr>
                     <td>${i++}</td>
-                    <td><a href="${repo.html_url}">${repo.name}</a></td>
+                    <td><a href="${repo.html_url}" target="_blank">${repo.name}</a></td>
                     <td>${repo.watchers_count}</td>
                     <td>${repo.forks_count}</td>
                     <td>${repo.stargazers_count}</td>
                     <td>${repo.updated_at}</td>
                     <td>${repo.default_branch}</td>
-                    <td>${(repo.homepage !== null) ? '<a href="'+repo.homepage+'"> Live Link </a>' : 'No Page' }</td>
+                    <td>${(repo.homepage !== null && repo.homepage !== '') ? '<a href="'+repo.homepage+'" target="_blank"> Live Link </a>' : 'No Page' }</td>
                 </tr>`
             });
         }        
