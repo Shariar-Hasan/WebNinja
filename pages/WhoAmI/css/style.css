@@ -20,9 +20,6 @@ body{
     font-family: 'Stylish', sans-serif;
     font-size: 30px;
     padding-left: 10px;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(rgb(51, 51, 51),rgba(0, 0, 0, 0.979));
 }
 .navbar a{
     color: black;

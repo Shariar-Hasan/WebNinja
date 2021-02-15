@@ -13,6 +13,7 @@ fetch(`https://ipwhois.app/json/`)
     .then(data => showYourIp(data))
     .catch(err => console.log(err))
 function showYourIp(data) {
+    console.log(data);
     document.getElementById('ip-table').innerHTML =
     `<tr>
         <th>IP Address</th>
@@ -57,11 +58,11 @@ function showYourIp(data) {
     </tr>
     <tr>
         <th>Platform</th>
-        <td>${navigator.oscpu.split(';')[0]}</td>
+        <td>${navigator.platform}</td>
     </tr>
     <tr>
         <th>Browser</th>
-        <td>${navigator.appCodeName}(${navigator.appVersion})</td>
+        <td>${navigator.appCodeName}</td>
     </tr>
     <tr>
         <th>User Agent</th>
