@@ -82,5 +82,8 @@ function showYourIp(data) {
     <tr>
         <th>Time Zone</th>
         <td>${data.timezone_gmt} : ${data.timezone}</td>
+    </tr>
+    <tr>
+        <th class="text-center" colspan="2">Contact : <a href="https://github.com/Shariar-Hasan">Shariar Hasan</a></th>
     </tr>`
 }
