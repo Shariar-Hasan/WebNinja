@@ -13,7 +13,6 @@ fetch(`https://ipwhois.app/json/`)
     .then(data => showYourIp(data))
     .catch(err => console.log(err))
 function showYourIp(data) {
-    console.log(data);
     document.getElementById('ip-table').innerHTML =
     `<tr>
         <th>IP Address</th>
@@ -65,12 +64,16 @@ function showYourIp(data) {
         <td>${navigator.appCodeName}</td>
     </tr>
     <tr>
-        <th>User Agent</th>
-        <td>${navigator.userAgent}</td>
+        <th>Cookies enabled</th>
+        <td>${(navigator.cookieEnabled)? "Enabled" : "Disabled"}</td>
     </tr>
     <tr>
         <th>Screen Size</th>
         <td>${window.outerWidth} X ${window.outerHeight}</td>
+    </tr>
+    <tr>
+        <th>Browser Online</th>
+        <td>${(navigator.onLine)? '<i class="online fa fa-circle" aria-hidden="true"></i>Online' : '<i class=" offline fa fa-circle" aria-hidden="true"></i>Offline'}</td>
     </tr>
     <tr>
         <th>Geo Location</th>

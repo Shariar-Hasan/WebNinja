@@ -27,7 +27,7 @@ body{
 
 table{
     color: rgb(0, 0, 0);
-    background-color: #3C40C6;
+    background-color: #8f92ff;
     border-radius: 10px;
 }
 
@@ -51,4 +51,10 @@ table thead h2{
 }
 tr:nth-child(2n){
     background-color: #575fcf44;
+}
+.online{
+    color: rgb(0, 255, 0);
+}
+.offline{
+    color: rgb(228, 32, 32);
 }
