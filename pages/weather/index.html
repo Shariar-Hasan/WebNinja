@@ -10,12 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/homepageStyle.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Weather Check</title>
 </head>
 
 <body>
-    <h1 class="heading display-4 text-light">Weather Check</h1>
+    <h1 class="heading display-4 text-light text-center">Weather Check</h1>
     <div id="popup-bg" class="popup-bg">
         <div id="popup-box" class="popup-box">
             <form id="search" >
@@ -26,10 +26,10 @@
             </form>
         </div>
     </div>
-    <div class="coll wp-coll">
+    <div class="col-md-5 mx-auto wp-coll">
         <button id="change-location-btn" class="btn text-light btn-danger btn-block w-100">Click to Select Location</button>
     </div>
-    <div class="coll wp-coll">
+    <div class="col-md-5 mx-auto wp-coll">
         <img id="weather-image" src="" alt="">
         <h1 id="cityname"></h1>
         <h1 id="countryName"></h1>
