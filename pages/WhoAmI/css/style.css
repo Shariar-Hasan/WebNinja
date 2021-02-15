@@ -6,6 +6,9 @@
 body{
     background-color: #a4a9f0;
 }
+a{
+    text-decoration: none;
+}
 .container{
     max-width: 1000px;
 }
@@ -32,7 +35,7 @@ table{
 }
 
 td,th{
-    padding: 20px 50px;
+    padding: 10px 20px;
     transition: .25s;
 }
 td{
